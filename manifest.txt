@@ -1,0 +1,9 @@
+README
+LICENSE
+manifest.txt
+
+a4wolke.ins
+a4wolke.dtx
+a4wolke.cls
+a4wolke.pdf
+a4template.tex
