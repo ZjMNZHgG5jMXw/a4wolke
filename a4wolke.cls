@@ -74,7 +74,12 @@
 \rofoot{Page~\textbf{\thepage}~of~\textbf{\pageref{LastPage}}}%
 \pagestyle{scrheadings}%
 \defpagestyle{titlepage}{%
-  {}{}{\includegraphics[scale=0.6]{A4cloud}\hfill\medskip}%
+  {}{}{%
+  \IfFileExists{A4cloud.pdf}%
+    {\includegraphics[scale=0.6]{A4cloud}}%
+    {[logo] mail stefan.berthold@kau.se for the logo image file}%
+  \hfill\medskip%
+  }%
 }{%
   {}{}{\parbox[b]{0.75\textwidth}{\scriptsize\color{cloudgreyfoot}%
     A4Cloud\\%
@@ -82,7 +87,10 @@
     Accountability For Cloud and Other Future Internet Services\\[\baselineskip]%
     FP7-ICT-2011-8-317550-A4CLOUD%
   }\hfill%
-  \parbox[b]{3cm}{\raggedleft\includegraphics[width=28mm]{seventh_framework_programme}}%
+  \parbox[b]{3cm}{\raggedleft%
+    \IfFileExists{seventh_framework_programme.jpg}%
+      {\includegraphics[width=28mm]{seventh_framework_programme}}%
+      {[logo] mail stefan.berthold@kau.se for the logo image file}}%
   }%
 }
 \define@cmdkeys[wol]{meta}[wol@meta@]%
