@@ -30,7 +30,7 @@
 %% Copyright (c) 2013 Stefan Berthold <stefan.berthold@kau.se>
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{a4wolke}
-    [2013/09/12 v1.0 a4wolke class]
+    [2013/09/17 v1.1 a4wolke class]
 \ProcessOptions\relax
 \LoadClass{scrartcl}
 \RequirePackage{scrpage2}
@@ -54,7 +54,7 @@
   \DTLaddcolumn{revision}{change}%
 \RequirePackage{colortbl}
 \RequirePackage{tabularx}
-\RequirePackage{xcolor}
+\RequirePackage[table]{xcolor}
 \RequirePackage{lastpage}
 \renewcommand\familydefault\sfdefault
 \definecolor{cloudblueframe}{rgb}{0.176,0.667,0.882}%
@@ -217,7 +217,12 @@
     \\\hline%
   \end{tabularx}\par%
 }
-\newenvironment{a4table}{}{}
+\newenvironment{a4tabular}[1]{%
+    \rowcolors{2}{cloudbluefill}{}%
+    \begin{tabular}{#1}%
+    \rowcolor{cloudblueframe}%
+  }%
+  {\end{tabular}}
 \endinput
 %%
 %% End of file `a4wolke.cls'.

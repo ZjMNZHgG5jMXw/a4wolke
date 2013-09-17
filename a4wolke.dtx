@@ -26,7 +26,7 @@
 %<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<class>\ProvidesClass{a4wolke}
 %<*class>
-    [2013/09/12 v1.0 a4wolke class]
+    [2013/09/17 v1.1 a4wolke class]
 %</class>
 %
 %<*driver>
@@ -40,7 +40,7 @@
 %</driver>
 % \fi
 %
-% \CheckSum{356}
+% \CheckSum{374}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -60,6 +60,7 @@
 %
 %
 % \changes{v1.0}{2013/09/12}{Initial release, derived from msc-4.2.}
+% \changes{v1.1}{2013/09/17}{Added a4tabular environment.}
 %
 % \GetFileInfo{\jobname.dtx}
 %
@@ -136,6 +137,15 @@
 % The rest of the document may be written as any other \LaTeX{} article.
 %    \begin{macrocode}
 \section{Introduction}
+\begin{table}
+  \centering
+  \begin{a4tabular}{|r|l|}
+    fun & run \\
+    run & fun \\
+    fun & run \\\hline
+  \end{a4tabular}
+  \caption{fun \& run.}
+\end{table}
 \end{document}
 %</template>
 %    \end{macrocode}
@@ -170,7 +180,7 @@
   \DTLaddcolumn{revision}{change}%
 \RequirePackage{colortbl}
 \RequirePackage{tabularx}
-\RequirePackage{xcolor}
+\RequirePackage[table]{xcolor}
 \RequirePackage{lastpage}
 \renewcommand\familydefault\sfdefault
 %    \end{macrocode}
@@ -426,9 +436,14 @@
 %
 % \subsection{Main matter}
 %
-% \begin{environment}{a4table}
+% \begin{environment}{a4tabular}\marg{column defs}
 %    \begin{macrocode}
-\newenvironment{a4table}{}{}
+\newenvironment{a4tabular}[1]{%
+    \rowcolors{2}{cloudbluefill}{}%
+    \begin{tabular}{#1}%
+    \rowcolor{cloudblueframe}%
+  }%
+  {\end{tabular}}
 %</class>
 %    \end{macrocode}
 % \end{environment}
