@@ -5,6 +5,13 @@ Copyright (c) 2013 Stefan Berthold <stefan.berthold@kau.se>
 
 ----------------------------------------------------------------------
 
+Use an updated version of TeXLive 2013 to render the LaTeX files!
+
+The bundle is known to work with datatool 2.16, but may fail with
+earlier versions of datatool.
+
+----------------------------------------------------------------------
+
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either version 1.3
 of this license or (at your option) any later version.
