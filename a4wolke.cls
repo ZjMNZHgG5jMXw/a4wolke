@@ -8,7 +8,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright (c) 2013 Stefan Berthold <stefan.berthold@kau.se>
+%% Copyright (c) 2014 Stefan Berthold <stefan.berthold@kau.se>
 %% 
 %% This file is part of the a4wolke bundle.
 %% 
@@ -26,11 +26,9 @@
 %% 
 %% This work consists of all files listed in manifest.txt.
 %% 
-%% a4wolke.dtx
-%% Copyright (c) 2013 Stefan Berthold <stefan.berthold@kau.se>
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{a4wolke}
-    [2013/09/17 v1.1 a4wolke class]
+    [2014/07/28 v1.2 a4wolke class]
 \ProcessOptions\relax
 \LoadClass{scrartcl}
 \RequirePackage{scrpage2}
@@ -54,6 +52,7 @@
   \DTLaddcolumn{revision}{change}%
 \RequirePackage{colortbl}
 \RequirePackage{tabularx}
+\RequirePackage{longtable}
 \RequirePackage[table]{xcolor}
 \RequirePackage{lastpage}
 \renewcommand\familydefault\sfdefault
@@ -207,7 +206,7 @@
 }
 \newcommand\tableofrevisions{%
   \noindent%
-  \begin{tabularx}{\textwidth}{|l|l|p{4cm}|X|}%
+  \begin{longtable}{|p{34pt}|p{60pt}|p{113.81pt}|p{160.44559pt}|}%
     \rowcolor{cloudblueframe}
     Version & Date & Author & Change Description%
     \DTLforeach*{revision}%
@@ -215,7 +214,7 @@
       {\\\hline\DTLifoddrow{\rowcolor{white}}{\rowcolor{cloudbluefill}}%
       \num & \dat & \auth{} (\affil) & \change}%
     \\\hline%
-  \end{tabularx}\par%
+  \end{longtable}\par%
 }
 \newenvironment{a4tabular}[1]{%
     \rowcolors{2}{cloudbluefill}{}%

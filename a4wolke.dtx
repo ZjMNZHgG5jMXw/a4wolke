@@ -1,6 +1,6 @@
 % \iffalse meta-comment
-%% a4wolke.dtx
-%% Copyright (c) 2013 Stefan Berthold <stefan.berthold@kau.se>
+% a4wolke.dtx
+% Copyright (c) 2014 Stefan Berthold <stefan.berthold@kau.se>
 %
 % This file is part of the a4wolke bundle.
 %
@@ -26,7 +26,7 @@
 %<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<class>\ProvidesClass{a4wolke}
 %<*class>
-    [2013/09/17 v1.1 a4wolke class]
+    [2014/07/28 v1.2 a4wolke class]
 %</class>
 %
 %<*driver>
@@ -61,6 +61,7 @@
 %
 % \changes{v1.0}{2013/09/12}{Initial release, derived from msc-4.2.}
 % \changes{v1.1}{2013/09/17}{Added a4tabular environment.}
+% \changes{v1.2}{2014/07/28}{Changed table of revisions to longtable.}
 %
 % \GetFileInfo{\jobname.dtx}
 %
@@ -180,6 +181,7 @@
   \DTLaddcolumn{revision}{change}%
 \RequirePackage{colortbl}
 \RequirePackage{tabularx}
+\RequirePackage{longtable}
 \RequirePackage[table]{xcolor}
 \RequirePackage{lastpage}
 \renewcommand\familydefault\sfdefault
@@ -421,7 +423,7 @@
 %    \begin{macrocode}
 \newcommand\tableofrevisions{%
   \noindent%
-  \begin{tabularx}{\textwidth}{|l|l|p{4cm}|X|}%
+  \begin{longtable}{|p{34pt}|p{60pt}|p{113.81pt}|p{160.44559pt}|}%
     \rowcolor{cloudblueframe}
     Version & Date & Author & Change Description%
     \DTLforeach*{revision}%
@@ -429,7 +431,7 @@
       {\\\hline\DTLifoddrow{\rowcolor{white}}{\rowcolor{cloudbluefill}}%
       \num & \dat & \auth{} (\affil) & \change}%
     \\\hline%
-  \end{tabularx}\par%
+  \end{longtable}\par%
 }
 %    \end{macrocode}
 % \end{macro}
