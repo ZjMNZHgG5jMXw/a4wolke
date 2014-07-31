@@ -214,7 +214,7 @@
       {\\\hline\DTLifoddrow{\rowcolor{white}}{\rowcolor{cloudbluefill}}%
       \num & \dat & \auth{} (\affil) & \change}%
     \\\hline%
-  \end{longtable}\par%
+  \end{longtable}\addtocounter{table}{-1}\par%
 }
 \newenvironment{a4tabular}[1]{%
     \rowcolors{2}{cloudbluefill}{}%
